@@ -2,6 +2,10 @@
 
 namespace Database\Seeders;
 
+use App\Models\User;
+use App\Models\Divisi;
+use App\Models\Karyawan;
+use App\Models\Kategori;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -13,6 +17,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        User::factory(20)->create();
+
+        Divisi::factory(4)->create();
+
+        Karyawan::factory(20)->create();
+
+        Kategori::factory(3)->create();
     }
 }
