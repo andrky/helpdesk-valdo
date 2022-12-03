@@ -17,7 +17,6 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->foreignId('karyawan_id');
             $table->string('email')->unique();
-            $table->string('username')->unique();
             $table->string('password');
             $table->string('level');
             $table->timestamp('email_verified_at')->nullable();

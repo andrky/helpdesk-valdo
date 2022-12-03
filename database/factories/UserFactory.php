@@ -17,7 +17,6 @@ class UserFactory extends Factory
         return [
             'karyawan_id' => mt_rand(1,20),
             'email' => $this->faker->unique()->safeEmail(),
-            'username' => $this->faker->username(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'level' => $this->faker->words(1,true),
             'email_verified_at' => now(),
