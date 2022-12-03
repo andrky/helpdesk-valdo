@@ -1,0 +1,34 @@
+<nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+    <div class="sb-sidenav-menu">
+        <div class="nav">
+            <div class="sb-sidenav-menu-heading">Menu</div>
+            <a class="nav-link {{ Request::is('dashboard') ? 'active' : ''}}" href="/dashboard">
+                <div class="sb-nav-link-icon"><i class="bi bi-house fs-6"></i></div>
+                Dashboard
+            </a>
+            <a class="nav-link" href="#">
+                <div class="sb-nav-link-icon"><i class="bi bi-ticket-detailed fs-6"></i></div>
+                Tiket
+            </a>
+            <a class="nav-link {{ Request::is('divisi') ? 'active' : ''}}" href="/divisi">
+                <div class="sb-nav-link-icon"><i class="bi bi-diagram-3 fs-6"></i></div>
+                Divisi
+            </a>
+            <a class="nav-link {{ Request::is('kategori') ? 'active' : ''}}" href="/kategori">
+                <div class="sb-nav-link-icon"><i class="bi bi-layout-three-columns fs-6"></i></div>
+                Kategori
+            </a>
+            <a class="nav-link {{ Request::is('karyawan') ? 'active' : ''}}" href="/karyawan">
+                <div class="sb-nav-link-icon"><i class="bi bi-people fs-6"></i></div>
+                Karyawan
+            </a>
+            <a class="nav-link {{ Request::is('user') ? 'active' : ''}}" href="/user">
+                <div class="sb-nav-link-icon"><i class="bi bi-person fs-6"></i></div>
+                User
+            </a>
+        </div>
+    </div>
+    <div class="sb-sidenav-footer">
+        <div class="small">Welcome back, {{ auth()->user()->email }}</div>
+    </div>
+</nav>
