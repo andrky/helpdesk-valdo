@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Login | Helpdesk Valdo</title>
+    <title>Helpdesk Valdo | {{ $title }}</title>
     <link href="/template/css/styles.css" rel="stylesheet" />
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
 </head>
@@ -70,8 +70,8 @@
                                     </form>
                                 </div>
                                 <div class="card-footer text-center py-3">
-                                    <div class="small text"><a href="register.html" class="text-decoration-none">Need an
-                                            account? Sign up!</a></div>
+                                    <div class="small text"><a href="https://www.instagram.com/andr.ky_/" class="text-decoration-none">Need an
+                                            account? Contact IT</a></div>
                                 </div>
                             </div>
                         </div>

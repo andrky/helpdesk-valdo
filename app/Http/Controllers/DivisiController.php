@@ -14,7 +14,9 @@ class DivisiController extends Controller
      */
     public function index()
     {
-        return view('divisi');
+        return view('divisi', [
+					'title' => "Divisi"
+				]);
     }
 
     /**

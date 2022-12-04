@@ -6,9 +6,9 @@
                 <div class="sb-nav-link-icon"><i class="bi bi-house fs-6"></i></div>
                 Dashboard
             </a>
-            <a class="nav-link" href="#">
+            <a class="nav-link {{ Request::is('tiket') ? 'active' : ''}}" href="/pengaduan">
                 <div class="sb-nav-link-icon"><i class="bi bi-ticket-detailed fs-6"></i></div>
-                Tiket
+                Pengaduan
             </a>
             <a class="nav-link {{ Request::is('divisi') ? 'active' : ''}}" href="/divisi">
                 <div class="sb-nav-link-icon"><i class="bi bi-diagram-3 fs-6"></i></div>

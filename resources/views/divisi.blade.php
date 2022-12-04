@@ -16,36 +16,37 @@
                     <table id="datatablesSimple">
                         <thead>
                             <tr>
-                                <th>#</th>
-                                <th>Divisi</th>
-                                <th>Team</th>
-                                <th>Action</th>
+                                <th class="text-center">No</th>
+                                <th class="text-center">Divisi</th>
+                                <th class="text-center">Team</th>
+                                <th class="text-center">Aksi</th>
                             </tr>
                         </thead>
                         <tfoot>
                             <tr>
-                                <th>#</th>
-                                <th>Divisi</th>
-                                <th>Team</th>
-                                <th>Action</th>
+                                <th class="text-center">No</th>
+                                <th class="text-center">Divisi</th>
+                                <th class="text-center">Team</th>
+                                <th class="text-center">Aksi</th>
                             </tr>
                         </tfoot>
                         <tbody>
                             <tr>
-                                <td>Tiger Nixon</td>
-                                <td>System Architect</td>
-                                <td>Edinburgh</td>
-                                <td>
-                                    <a href="#" class="badge bg-warning fs-6 me-2"><i
-                                            class="bi bi-pencil-square"></i></a>
-                                    <a href="#" class="badge bg-danger fs-6"><i class="bi bi-trash"></i></a>
+                                <td class="text-center">Tiger Nixon</td>
+                                <td class="text-center">System Architect</td>
+                                <td class="text-center">Edinburgh</td>
+                                <td class="text-center">
+                                    <button type="button" class="btn btn-warning btn-sm me-2"><i
+                                            class="bi bi-pencil-square"></i></button>
+                                    <button type="button" class="btn btn-danger btn-sm"><i
+                                            class="bi bi-trash"></i></button>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
-            {{-- Modal --}}
+            {{-- Modal Tambah Divisi--}}
             <div class="modal fade" id="modalTambahDivisi" tabindex="-1" aria-labelledby="modalTambahDivisi"
                 aria-hidden="true">
                 <div class="modal-dialog">
@@ -64,7 +65,8 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="" class="label-bold">Team</label>
-                                    <input type="text" class="form-control" id="addJumlahBarang" name="addJumlahBarang" placeholder="Team...">
+                                    <input type="text" class="form-control" id="addJumlahBarang" name="addJumlahBarang"
+                                        placeholder="Team...">
                                 </div>
                                 <div class="modal-footer">
                                     <button type="submit" class="btn btn-primary">Tambah Data</button>

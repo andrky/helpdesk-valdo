@@ -497,5 +497,5 @@
             </div>
         </div>
     </main>
-		@include('layouts.footer.index')
+		@include('footer.index')
 @endsection

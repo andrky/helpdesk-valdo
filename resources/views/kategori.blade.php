@@ -16,32 +16,33 @@
                     <table id="datatablesSimple">
                         <thead>
                             <tr>
-                                <th>#</th>
-                                <th>Kategori</th>
-                                <th>Action</th>
+                                <th class="text-center">No</th>
+                                <th class="text-center">Kategori</th>
+                                <th class="text-center">Aksi</th>
                             </tr>
                         </thead>
                         <tfoot>
                             <tr>
-                                <th>#</th>
-                                <th>Kategori</th>
-                                <th>Action</th>
+                                <th class="text-center">No</th>
+                                <th class="text-center">Kategori</th>
+                                <th class="text-center">Aksi</th>
                             </tr>
                         </tfoot>
                         <tbody>
                             <tr>
-                                <td>Tiger Nixon</td>
-                                <td>System Architect</td>
-                                <td>
-                                    <a href="#" class="badge bg-warning fs-6 me-2"><i
-                                            class="bi bi-pencil-square"></i></a>
-                                    <a href="#" class="badge bg-danger fs-6"><i class="bi bi-trash"></i></a>
+                                <td class="text-center">Tiger Nixon</td>
+                                <td class="text-center">System Architect</td>
+                                <td class="text-center">
+                                    <button type="button" class="btn btn-warning btn-sm me-2"><i
+                                            class="bi bi-pencil-square"></i></button>
+                                    <button type="button" class="btn btn-danger btn-sm"><i
+                                            class="bi bi-trash"></i></button>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-                {{-- Modal --}}
+                {{-- Modal Tambah Kategori--}}
                 <div class="modal fade" id="modalTambahKategori" tabindex="-1" aria-labelledby="modalTambahKategori"
                     aria-hidden="true">
                     <div class="modal-dialog">
@@ -71,5 +72,5 @@
             </div>
         </div>
     </main>
-    @include('layouts.footer.index')
+    @include('footer.index')
 @endsection

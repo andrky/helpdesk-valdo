@@ -31,7 +31,15 @@ Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
 
 Route::get('/dashboard', function() {
-	return view('index');
+	return view('index',[
+		'title' => "Dashboard"
+	]);
+})->middleware('auth');
+
+Route::get('/pengaduan', function() {
+	return view('pengaduan',[
+		'title' => "Pengaduan"
+	]);
 })->middleware('auth');
 
 Route::resource('/divisi', DivisiController::class)->middleware('auth');

@@ -16,43 +16,44 @@
                     <table id="datatablesSimple">
                         <thead>
                             <tr>
-                                <th>#</th>
-                                <th>Divisi</th>
-                                <th>Team</th>
-                                <th>Nama Karyawan</th>
-                                <th>Jabatan</th>
-                                <th>Action</th>
+                                <th class="text-center">No</th>
+                                <th class="text-center">Divisi</th>
+                                <th class="text-center">Team</th>
+                                <th class="text-center">Nama</th>
+                                <th class="text-center">Jabatan</th>
+                                <th class="text-center">Aksi</th>
                             </tr>
                         </thead>
                         <tfoot>
                             <tr>
-                                <th>#</th>
-                                <th>Divisi</th>
-                                <th>Team</th>
-                                <th>Nama Karyawan</th>
-                                <th>Jabatan</th>
-                                <th>Action</th>
+                                <th class="text-center">No</th>
+                                <th class="text-center">Divisi</th>
+                                <th class="text-center">Team</th>
+                                <th class="text-center">Nama</th>
+                                <th class="text-center">Jabatan</th>
+                                <th class="text-center">Aksi</th>
                             </tr>
                         </tfoot>
                         <tbody>
                             <tr>
-                                <td>Tiger Nixon</td>
-                                <td>System Architect</td>
-                                <td>System Architect</td>
-                                <td>Edinburgh</td>
-                                <td>Edinburgh</td>
-                                <td>
-                                    <a href="#" class="badge bg-warning fs-6 me-2"><i
-                                            class="bi bi-pencil-square"></i></a>
-                                    <a href="#" class="badge bg-danger fs-6"><i class="bi bi-trash"></i></a>
+                                <td class="text-center">Tiger Nixon</td>
+                                <td class="text-center">System Architect</td>
+                                <td class="text-center">System Architect</td>
+                                <td class="text-center">Edinburgh</td>
+                                <td class="text-center">Edinburgh</td>
+                                <td class="text-center">
+                                    <button type="button" class="btn btn-warning btn-sm me-2"><i
+                                            class="bi bi-pencil-square"></i></button>
+                                    <button type="button" class="btn btn-danger btn-sm"><i
+                                            class="bi bi-trash"></i></button>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
-            {{-- Modal --}}
-            <div class="modal fade" id="modalTambahKaryawan" tabindex="-1" aria-labelledby="modalTambahDivisi"
+            {{-- Modal Tambah Karyawan--}}
+            <div class="modal fade" id="modalTambahKaryawan" tabindex="-1" aria-labelledby="modalTambahKaryawan"
                 aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -86,10 +87,10 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="" class="label-bold">Nama Karyawan</label>
+                                    <label for="" class="label-bold">Nama</label>
                                     <div class="input-group">
                                         <select class="form-select" id="inputGroupSelect01">
-                                            <option selected>--Pilih Nama Karyawan--</option>
+                                            <option selected>--Pilih Nama--</option>
                                             <option value="1">One</option>
                                             <option value="2">Two</option>
                                             <option value="3">Three</option>
@@ -111,5 +112,5 @@
             </div>
         </div>
     </main>
-    @include('layouts.footer.index')
+    @include('footer.index')
 @endsection
