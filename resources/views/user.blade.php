@@ -34,11 +34,11 @@
                         </tfoot>
                         <tbody>
                             <tr>
-                                <td class="text-center">Nama</td>
-                                <td class="text-center">System Architect</td>
-                                <td class="text-center">System Architect</td>
-                                <td class="text-center">System Architect</td>
-                                <td class="text-center">
+                                <td class="text-center align-middle">Nama</td>
+                                <td class="text-center align-middle">System Architect</td>
+                                <td class="text-center align-middle">System Architect</td>
+                                <td class="text-center align-middle">System Architect</td>
+                                <td class="text-center align-middle">
                                     <button type="button" class="btn btn-warning btn-sm me-2"><i
                                             class="bi bi-pencil-square"></i></button>
                                     <button type="button" class="btn btn-danger btn-sm"><i

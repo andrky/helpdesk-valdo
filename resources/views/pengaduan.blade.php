@@ -46,16 +46,16 @@
                         </tfoot>
                         <tbody>
                             <tr>
-                                <td class="text-center">Nama Karyawan</td>
-                                <td class="text-center">System Architect</td>
-                                <td class="text-center">System Architect</td>
-                                <td class="text-center">System Architect</td>
-                                <td class="text-center">System Architect</td>
-                                <td class="text-center">System Architect</td>
-                                <td class="text-center">System Architect</td>
-                                <td class="text-center">System Architect</td>
-                                <td class="text-center">System Architect</td>
-                                <td class="text-center">
+                                <td class="text-center align-middle">Nama Karyawan</td>
+                                <td class="text-center align-middle">System Architect</td>
+                                <td class="text-center align-middle">System Architect</td>
+                                <td class="text-center align-middle">System Architect</td>
+                                <td class="text-center align-middle">System Architect</td>
+                                <td class="text-center align-middle">System Architect</td>
+                                <td class="text-center align-middle">System Architect</td>
+                                <td class="text-center align-middle">System Architect</td>
+                                <td class="text-center align-middle">System Architect</td>
+                                <td class="text-center align-middle">
                                     <div class="bg-primary rounded-3 py-1 text-white" style="font-size: 10px">
                                         Open
                                     </div>
