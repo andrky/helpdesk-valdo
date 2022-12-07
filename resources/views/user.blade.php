@@ -16,20 +16,20 @@
                     <table id="datatablesSimple">
                         <thead>
                             <tr>
-                                <th class="text-center">No</th>
-                                <th class="text-center">Nama</th>
-                                <th class="text-center">E-mail</th>
-                                <th class="text-center">Level</th>
-                                <th class="text-center">Aksi</th>
+                                <th class="text-center align-middle">No</th>
+                                <th class="text-center align-middle">Nama</th>
+                                <th class="text-center align-middle">E-mail</th>
+                                <th class="text-center align-middle">Level</th>
+                                <th class="text-center align-middle">Aksi</th>
                             </tr>
                         </thead>
                         <tfoot>
                             <tr>
-                                <th class="text-center">No</th>
-                                <th class="text-center">Nama</th>
-                                <th class="text-center">E-mail</th>
-                                <th class="text-center">Level</th>
-                                <th class="text-center">Aksi</th>
+                                <th class="text-center align-middle">No</th>
+                                <th class="text-center align-middle">Nama</th>
+                                <th class="text-center align-middle">E-mail</th>
+                                <th class="text-center align-middle">Level</th>
+                                <th class="text-center align-middle">Aksi</th>
                             </tr>
                         </tfoot>
                         <tbody>

@@ -16,32 +16,32 @@
                     <table id="datatablesSimple">
                         <thead>
                             <tr>
-                                <th class="text-center">No</th>
-                                <th class="text-center">Pelapor</th>
-                                <th class="text-center">Kategori</th>
-                                <th class="text-center">Keterangan</th>
-                                <th class="text-center">Tanggal Pengaduan</th>
-                                <th class="text-center">Teknisi</th>
-                                <th class="text-center">Tanggal Proses</th>
-                                <th class="text-center">Tanggal Selesai</th>
-                                <th class="text-center">Troubleshooting</th>
-                                <th class="text-center">Status</th>
-                                <th class="text-center">Aksi</th>
+                                <th class="text-center align-middle">No</th>
+                                <th class="text-center align-middle">Pelapor</th>
+                                <th class="text-center align-middle">Kategori</th>
+                                <th class="text-center align-middle">Keterangan</th>
+                                <th class="text-center align-middle">Tanggal Pengaduan</th>
+                                <th class="text-center align-middle">Teknisi</th>
+                                <th class="text-center align-middle">Tanggal Proses</th>
+                                <th class="text-center align-middle">Tanggal Selesai</th>
+                                <th class="text-center align-middle">Troubleshooting</th>
+                                <th class="text-center align-middle">Status</th>
+                                <th class="text-center align-middle">Aksi</th>
                             </tr>
                         </thead>
                         <tfoot>
                             <tr>
-                                <th class="text-center">No</th>
-                                <th class="text-center">Pelapor</th>
-                                <th class="text-center">Kategori</th>
-                                <th class="text-center">Keterangan</th>
-                                <th class="text-center">Tanggal Pengaduan</th>
-                                <th class="text-center">Teknisi</th>
-                                <th class="text-center">Tanggal Proses</th>
-                                <th class="text-center">Tanggal Selesai</th>
-                                <th class="text-center">Troubleshooting</th>
-                                <th class="text-center">Status</th>
-                                <th class="text-center">Aksi</th>
+                                <th class="text-center align-middle">No</th>
+                                <th class="text-center align-middle">Pelapor</th>
+                                <th class="text-center align-middle">Kategori</th>
+                                <th class="text-center align-middle">Keterangan</th>
+                                <th class="text-center align-middle">Tanggal Pengaduan</th>
+                                <th class="text-center align-middle">Teknisi</th>
+                                <th class="text-center align-middle">Tanggal Proses</th>
+                                <th class="text-center align-middle">Tanggal Selesai</th>
+                                <th class="text-center align-middle">Troubleshooting</th>
+                                <th class="text-center align-middle">Status</th>
+                                <th class="text-center align-middle">Aksi</th>
                             </tr>
                         </tfoot>
                         <tbody>

@@ -16,18 +16,18 @@
                     <table id="datatablesSimple">
                         <thead>
                             <tr>
-                                <th class="text-center">No</th>
-                                <th class="text-center">Divisi</th>
-                                <th class="text-center">Team</th>
-                                <th class="text-center">Aksi</th>
+                                <th class="text-center align-middle">No</th>
+                                <th class="text-center align-middle">Divisi</th>
+                                <th class="text-center align-middle">Team</th>
+                                <th class="text-center align-middle">Aksi</th>
                             </tr>
                         </thead>
                         <tfoot>
                             <tr>
-                                <th class="text-center">No</th>
-                                <th class="text-center">Divisi</th>
-                                <th class="text-center">Team</th>
-                                <th class="text-center">Aksi</th>
+                                <th class="text-center align-middle">No</th>
+                                <th class="text-center align-middle">Divisi</th>
+                                <th class="text-center align-middle">Team</th>
+                                <th class="text-center align-middle">Aksi</th>
                             </tr>
                         </tfoot>
                         <tbody>
