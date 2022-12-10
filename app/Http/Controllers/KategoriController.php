@@ -37,7 +37,13 @@ class KategoriController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validateData = $request->validate([
+				'kategori' => 'required|max:255'
+			]);
+
+			Kategori::create($validateData);
+
+			return redirect('/kategori')->with('success', 'Kategori berhasil ditambahkan!');
     }
 
     /**

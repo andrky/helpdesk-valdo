@@ -7,10 +7,19 @@
             <ol class="breadcrumb mb-4">
                 <li class="breadcrumb-item active">Kategori</li>
             </ol>
+
+            {{-- Notif berhasil tambah kategori --}}
+            @if (session()->has('success'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    {{ session('success') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
+
             <div class="card mb-4">
                 <div class="card-header">
                     <button type="button" class="btn btn-success" data-bs-toggle="modal"
-                        data-bs-target="#modalTambahKategori"><i class="bi bi-plus-lg pe-2"></i>Tambah Data</button>
+                        data-bs-target="#TambahKategori"><i class="bi bi-plus-lg pe-2"></i>Tambah Data</button>
                 </div>
                 <div class="card-body">
                     <table id="datatablesSimple">
@@ -42,8 +51,8 @@
                         </tbody>
                     </table>
                 </div>
-                {{-- Modal Tambah Kategori--}}
-                <div class="modal fade" id="modalTambahKategori" tabindex="-1" aria-labelledby="modalTambahKategori"
+                {{-- Modal Tambah Kategori --}}
+                <div class="modal fade" id="TambahKategori" tabindex="-1" aria-labelledby="TambahKategori"
                     aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
@@ -54,11 +63,19 @@
                             </div>
                             <div class="modal-body">
                                 <!--FORM TAMBAH KATEGORI-->
-                                <form action="" method=" ">
+                                <form action="/kategori" method="post">
+                                    @csrf
                                     <div class="form-group">
-                                        <label for="" class="label-bold">Kategori</label>
-                                        <input type="text" class="form-control" id="addNamaBarang" name="addNamaBarang"
-                                            aria-describedby="emailHelp" placeholder="Kategori...">
+                                        <label for="Kategori" class="label-bold">Kategori</label>
+                                        <input type="text"
+                                            class="form-control @error('kategori') is-invalid @enderror"
+                                            id="kategori" name="kategori" aria-describedby="emailHelp"
+                                            placeholder="Kategori...">
+                                        @error('kategori')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
                                     </div>
                                     <div class="modal-footer">
                                         <button type="submit" class="btn btn-primary">Tambah Data</button>
@@ -69,6 +86,7 @@
                         </div>
                     </div>
                 </div>
+								
             </div>
         </div>
     </main>
