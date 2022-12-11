@@ -14,8 +14,9 @@ class DivisiController extends Controller
      */
     public function index()
     {
-        return view('divisi', [
-					'title' => "Divisi"
+        return view('divisi.divisi', [
+					'title' => "Divisi",
+					'divisis' => Divisi::all()
 				]);
     }
 
@@ -26,7 +27,9 @@ class DivisiController extends Controller
      */
     public function create()
     {
-        //
+        return view('divisi.divisitambah', [
+					'title' => "Tambah Divisi"
+				]);
     }
 
     /**
@@ -37,7 +40,14 @@ class DivisiController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validateData = $request->validate([
+					'divisi' => 'required|max:255',
+					'team' => 'required|unique:divisis|max:255'
+				]);
+
+				Divisi::create($validateData);
+
+				return redirect('/divisi')->with('success', 'Data berhasil ditambahkan!');
     }
 
     /**
@@ -59,7 +69,10 @@ class DivisiController extends Controller
      */
     public function edit(Divisi $divisi)
     {
-        //
+        return view('divisi.divisiedit', [
+					'title' => "Edit Kategori",
+					'divisis' => $divisi
+				]);
     }
 
     /**
@@ -71,7 +84,20 @@ class DivisiController extends Controller
      */
     public function update(Request $request, Divisi $divisi)
     {
-        //
+        $rules = [
+						'divisi' => 'required|max:255',
+				];
+
+				if($request->team != $divisi->team) {
+					$rules['team'] = 'required|unique:divisis|max:255';
+				}
+
+				$validatedData = $request->validate($rules);
+
+				Divisi::where('id', $divisi->id)
+						->update($validatedData);
+
+				return redirect('/divisi')->with('success', 'Data berhasil diedit!');
     }
 
     /**
@@ -82,6 +108,8 @@ class DivisiController extends Controller
      */
     public function destroy(Divisi $divisi)
     {
-        //
+        Divisi::destroy($divisi->id);
+
+				return redirect('/divisi')->with('success', 'Data berhasil dihapus!');
     }
 }

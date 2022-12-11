@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Kategori;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class KategoriController extends Controller
 {
@@ -14,8 +15,9 @@ class KategoriController extends Controller
      */
     public function index()
     {
-        return view('kategori', [
-					'title' => "Kategori"
+        return view('kategori.kategori', [
+					'title' => "Kategori",
+					'kategoris' => Kategori::all()
 				]);
     }
 
@@ -26,7 +28,9 @@ class KategoriController extends Controller
      */
     public function create()
     {
-        //
+        return view('kategori.kategoritambah', [
+					'title' => "Tambah Kategori"
+				]);
     }
 
     /**
@@ -38,12 +42,12 @@ class KategoriController extends Controller
     public function store(Request $request)
     {
         $validateData = $request->validate([
-				'kategori' => 'required|max:255'
-			]);
+					'kategori' => 'required|unique:kategoris|max:255'
+				]);
 
-			Kategori::create($validateData);
+				Kategori::create($validateData);
 
-			return redirect('/kategori')->with('success', 'Kategori berhasil ditambahkan!');
+				return redirect('/kategori')->with('success', 'Data berhasil ditambahkan!');
     }
 
     /**
@@ -65,7 +69,10 @@ class KategoriController extends Controller
      */
     public function edit(Kategori $kategori)
     {
-        //
+        return view('kategori.kategoriedit', [
+					'title' => "Edit Kategori",
+					'kategoris' => $kategori
+				]);
     }
 
     /**
@@ -77,7 +84,19 @@ class KategoriController extends Controller
      */
     public function update(Request $request, Kategori $kategori)
     {
-        //
+				$rules = [
+				];
+
+				if($request->kategori != $kategori->kategori) {
+					$rules['kategori'] = 'required|unique:kategoris|max:255';
+				}
+
+				$validatedData = $request->validate($rules);
+
+				Kategori::where('id', $kategori->id)
+						->update($validatedData);
+
+				return redirect('/kategori')->with('success', 'Data berhasil diedit!');
     }
 
     /**
@@ -88,6 +107,8 @@ class KategoriController extends Controller
      */
     public function destroy(Kategori $kategori)
     {
-        //
+        Kategori::destroy($kategori->id);
+
+				return redirect('/kategori')->with('success', 'Data berhasil dihapus!');
     }
 }

@@ -14,4 +14,5 @@ class Divisi extends Model
     // public function karyawan() {
     //   return $this->belongsTo(Karyawan::class);
     // }
+		
 }
