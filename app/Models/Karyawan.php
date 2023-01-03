@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Divisi;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Karyawan extends Model
 {
@@ -11,7 +12,7 @@ class Karyawan extends Model
 
     protected $guarded = ['id'];
 
-    // public function divisi() {
-    //   return $this->hasOne(Divisi::class);
-    // }
+    public function divisi() {
+      return $this->belongsTo(Divisi::class);
+    }
 }

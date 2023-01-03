@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Karyawan;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class KaryawanController extends Controller
 {
@@ -14,8 +15,9 @@ class KaryawanController extends Controller
      */
     public function index()
     {
-				return view('karyawan', [
-					'title' => "Karyawan"
+				return view('karyawan.karyawan', [
+					'title' => "Karyawan",
+					'karyawans' => Karyawan::all()
 				]);
     }
 
@@ -26,7 +28,9 @@ class KaryawanController extends Controller
      */
     public function create()
     {
-        //
+        return view('karyawan.karyawantambah', [
+					'title' => "Tambah Karyawan"
+				]);
     }
 
     /**
