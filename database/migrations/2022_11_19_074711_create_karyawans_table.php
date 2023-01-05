@@ -16,6 +16,7 @@ class CreateKaryawansTable extends Migration
         Schema::create('karyawans', function (Blueprint $table) {
             $table->id();
             $table->foreignId('divisi_id');
+            $table->foreignId('team_id');
             $table->string('karyawan');
             $table->string('jabatan');
             $table->timestamps();

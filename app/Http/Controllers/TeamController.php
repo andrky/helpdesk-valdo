@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Divisi;
+use App\Models\Team;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class DivisiController extends Controller
+class TeamController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +15,9 @@ class DivisiController extends Controller
      */
     public function index()
     {
-        return view('divisi.divisi', [
-					'title' => "Divisi",
-					'divisis' => Divisi::all()
+        return view('team.team', [
+					'title' => "Team",
+					'teams' => Team::all()
 				]);
     }
 
@@ -28,8 +28,8 @@ class DivisiController extends Controller
      */
     public function create()
     {
-        return view('divisi.divisitambah', [
-					'title' => "Tambah Divisi"
+        return view('team.teamtambah', [
+					'title' => "Tambah Team"
 				]);
     }
 
@@ -42,21 +42,21 @@ class DivisiController extends Controller
     public function store(Request $request)
     {
         $validateData = $request->validate([
-					'divisi' => 'required|unique:divisis|max:255'
+					'team' => 'required|unique:teams|max:255'
 				]);
 
-				Divisi::create($validateData);
+				Team::create($validateData);
 
-				return redirect('/divisi')->with('success', 'Data berhasil ditambahkan!');
+				return redirect('/team')->with('success', 'Data berhasil ditambahkan!');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Divisi  $divisi
+     * @param  \App\Models\Team  $team
      * @return \Illuminate\Http\Response
      */
-    public function show(Divisi $divisi)
+    public function show(Team $team)
     {
         //
     }
@@ -64,14 +64,14 @@ class DivisiController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Divisi  $divisi
+     * @param  \App\Models\Team  $team
      * @return \Illuminate\Http\Response
      */
-    public function edit(Divisi $divisi)
+    public function edit(Team $team)
     {
-        return view('divisi.divisiedit', [
-					'title' => "Edit Divisi",
-					'divisis' => $divisi
+        return view('team.teamedit', [
+					'title' => "Edit team",
+					'teams' => $team
 				]);
     }
 
@@ -79,36 +79,36 @@ class DivisiController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Divisi  $divisi
+     * @param  \App\Models\Team  $team
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Divisi $divisi)
+    public function update(Request $request, Team $team)
     {
         $rules = [
 				];
 
-				if($request->divisi != $divisi->divisi) {
-					$rules['divisi'] = 'required|unique:divisis|max:255';
+				if($request->team != $team->team) {
+					$rules['team'] = 'required|unique:teams|max:255';
 				}
 
 				$validatedData = $request->validate($rules);
 
-				Divisi::where('id', $divisi->id)
+				Team::where('id', $team->id)
 						->update($validatedData);
 
-				return redirect('/divisi')->with('success', 'Data berhasil diedit!');
+				return redirect('/team')->with('success', 'Data berhasil diedit!');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Divisi  $divisi
+     * @param  \App\Models\Team  $team
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Divisi $divisi)
+    public function destroy(Team $team)
     {
-        Divisi::destroy($divisi->id);
+        Team::destroy($team->id);
 
-				return redirect('/divisi')->with('success', 'Data berhasil dihapus!');
+				return redirect('/team')->with('success', 'Data berhasil dihapus!');
     }
 }

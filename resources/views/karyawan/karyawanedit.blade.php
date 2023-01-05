@@ -3,34 +3,66 @@
 @section('content')
     <main>
         <div class="container-fluid px-4">
-            <h1 class="mt-4">Edit Divisi</h1>
+            <h1 class="mt-4">Edit Karyawan</h1>
             <ol class="breadcrumb mb-4">
-                <li class="breadcrumb-item active">Edit Divisi</li>
+                <li class="breadcrumb-item active">Edit Karyawan</li>
             </ol>
 
             <div class="card mb-4">
                 <div class="card-header">
-									<a href="/divisi" class="btn btn-success"><i class="bi bi-arrow-left pe-2"></i>Kembali</a>
+                    <a href="/karyawan" class="btn btn-success"><i class="bi bi-arrow-left pe-2"></i>Kembali</a>
                 </div>
                 <div class="card-body">
-                    <form action="/divisi/{{ $divisis->id }}" method="post">
-												@method('put')
+                    <form action="/karyawan/{{ $karyawans->id }}" method="post">
+                        @method('put')
                         @csrf
                         <div class="form-group">
-                            <label for="Divisi" class="label-bold">Divisi</label>
-                            <input type="text" class="form-control @error('divisi') is-invalid @enderror "
-                                id="divisi" name="divisi" aria-describedby="emailHelp" placeholder="Divisi..."
-                                required autofocus value="{{ old('divisi', $divisis->divisi) }}">
-                            @error('divisi')
+                            <div class="row">
+                                <div class="col">
+                                    <label for="Divisi" class="label-bold">Divisi</label>
+                                    <div class="input-group">
+                                        <select class="form-select" name="divisi_id">
+                                            @foreach ($divisis as $divisi)
+                                                @if (old('divisi_id', $karyawans->divisi_id) == $divisi->id)
+                                                    <option value="{{ $divisi->id }}" selected>{{ $divisi->divisi }}
+                                                    </option>
+                                                @else
+                                                    <option value="{{ $divisi->id }}">{{ $divisi->divisi }}</option>
+                                                @endif
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <label for="Team" class="label-bold">Team</label>
+                                    <div class="input-group">
+                                        <select class="form-select" name="team_id">
+                                            @foreach ($teams as $team)
+                                                @if (old('team_id', $karyawans->team_id) == $team->id)
+                                                    <option value="{{ $team->id }}" selected>{{ $team->team }}
+                                                    </option>
+                                                @else
+                                                    <option value="{{ $team->id }}">{{ $team->team }}</option>
+                                                @endif
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <label for="Karyawan" class="label-bold label-mt">Karyawan</label>
+                            <input type="text" class="form-control @error('karyawan') is-invalid @enderror "
+                                id="karyawan" name="karyawan" aria-describedby="emailHelp" placeholder="Karyawan..."
+                                required autofocus value="{{ old('karyawan', $karyawans->karyawan) }}">
+                            @error('karyawan')
                                 <div class="invalid-feedback">
                                     {{ $message }}
                                 </div>
                             @enderror
-														<label for="Divisi" class="label-bold label-mt">Team</label>
-                            <input type="text" class="form-control  @error('team') is-invalid @enderror "
-                                id="team" name="team" aria-describedby="emailHelp" placeholder="Team..."
-                                required autofocus value="{{ old('team', $divisis->team) }}">
-                            @error('team')
+                            <label for="Karyawan" class="label-bold label-mt">Jabatan</label>
+                            <input type="text" class="form-control  @error('team') is-invalid @enderror " id="jabatan"
+                                name="jabatan" aria-describedby="emailHelp" placeholder="Team..." required autofocus
+                                value="{{ old('karyawan', $karyawans->jabatan) }}">
+                            @error('jabatan')
                                 <div class="invalid-feedback">
                                     {{ $message }}
                                 </div>

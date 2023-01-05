@@ -14,6 +14,10 @@
                 <div class="sb-nav-link-icon"><i class="bi bi-diagram-3 fs-6"></i></div>
                 Divisi
             </a>
+            <a class="nav-link {{ Request::is('team*') ? 'active' : ''}}" href="/team">
+                <div class="sb-nav-link-icon"><i class="bi bi-globe fs-6"></i></div>
+                Team
+            </a>
             <a class="nav-link {{ Request::is('kategori*') ? 'active' : ''}}" href="/kategori">
                 <div class="sb-nav-link-icon"><i class="bi bi-layout-three-columns fs-6"></i></div>
                 Kategori

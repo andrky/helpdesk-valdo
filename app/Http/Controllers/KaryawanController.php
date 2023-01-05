@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Team;
+use App\Models\Divisi;
 use App\Models\Karyawan;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -29,7 +31,10 @@ class KaryawanController extends Controller
     public function create()
     {
         return view('karyawan.karyawantambah', [
-					'title' => "Tambah Karyawan"
+					'title' => "Tambah Karyawan",
+					'karyawans' => Karyawan::all(),
+					'divisis' => Divisi::all(),
+					'teams' => Team::all()
 				]);
     }
 
@@ -41,7 +46,16 @@ class KaryawanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validateData = $request->validate([
+					'divisi_id' => 'required',
+					'team_id' => 'required',
+					'karyawan' => 'required|max:255',
+					'jabatan' => 'required|max:255'
+				]);
+
+				Karyawan::create($validateData);
+
+				return redirect('/karyawan')->with('success', 'Data berhasil ditambahkan!');
     }
 
     /**
@@ -63,7 +77,12 @@ class KaryawanController extends Controller
      */
     public function edit(Karyawan $karyawan)
     {
-        //
+        return view('karyawan.karyawanedit', [
+					'title' => "Edit Karyawan",
+					'karyawans' => $karyawan,
+					'divisis' => Divisi::all(),
+					'teams' => Team::all()
+				]);
     }
 
     /**
@@ -75,7 +94,25 @@ class KaryawanController extends Controller
      */
     public function update(Request $request, Karyawan $karyawan)
     {
-        //
+        $rules = [
+					'divisi_id' => 'required',
+					'team_id' => 'required'
+				];
+
+				if($request->karyawan != $karyawan->karyawan) {
+					$rules['karyawan'] = 'required|max:255';
+				}
+
+				if($request->jabatan != $karyawan->jabatan) {
+					$rules['jabatan'] = 'required|max:255';
+				}
+
+				$validatedData = $request->validate($rules);
+
+				Karyawan::where('id', $karyawan->id)
+						->update($validatedData);
+
+				return redirect('/karyawan')->with('success', 'Data berhasil diedit!');
     }
 
     /**
@@ -86,6 +123,8 @@ class KaryawanController extends Controller
      */
     public function destroy(Karyawan $karyawan)
     {
-        //
+        Karyawan::destroy($karyawan->id);
+
+				return redirect('/karyawan')->with('success', 'Data berhasil dihapus!');
     }
 }

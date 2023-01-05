@@ -6,7 +6,7 @@ use App\Models\Karyawan;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Divisi extends Model
+class Team extends Model
 {
     use HasFactory;
 

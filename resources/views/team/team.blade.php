@@ -3,9 +3,9 @@
 @section('content')
     <main>
         <div class="container-fluid px-4">
-            <h1 class="mt-4">Divisi</h1>
+            <h1 class="mt-4">Team</h1>
             <ol class="breadcrumb mb-4">
-                <li class="breadcrumb-item active">Divisi</li>
+                <li class="breadcrumb-item active">Team</li>
             </ol>
 
             {{-- Notif berhasil tambah kategori --}}
@@ -18,56 +18,56 @@
 
             <div class="card mb-4">
                 <div class="card-header">
-                    <a href="/divisi/create" class="btn btn-success"><i class="bi bi-plus-lg pe-2"></i>Tambah Data</a>
+                    <a href="/team/create" class="btn btn-success"><i class="bi bi-plus-lg pe-2"></i>Tambah Data</a>
                 </div>
-                {{-- View, Edit dan Divisi --}}
+                {{-- View, Edit dan Team --}}
                 <div class="card-body">
                     <table id="datatablesSimple">
                         <thead>
                             <tr>
                                 <th class="text-center align-middle">No</th>
-                                <th class="text-center align-middle">Divisi</th>
+                                <th class="text-center align-middle">Team</th>
                                 <th class="text-center align-middle">Aksi</th>
                             </tr>
                         </thead>
                         <tfoot>
                             <tr>
                                 <th class="text-center align-middle">No</th>
-                                <th class="text-center align-middle">Divisi</th>
+                                <th class="text-center align-middle">Team</th>
                                 <th class="text-center align-middle">Aksi</th>
                             </tr>
                         </tfoot>
                         <tbody>
-                            @foreach ($divisis as $divisi)
+                            @foreach ($teams as $team)
                                 <tr>
                                     <td class="text-center align-middle">{{ $loop->iteration }}</td>
-                                    <td class="text-center align-middle">{{ $divisi->divisi }}</td>
+                                    <td class="text-center align-middle">{{ $team->team }}</td>
                                     <td class="text-center align-middle">
-                                        <a href="/divisi/{{ $divisi->id }}/edit" class="btn btn-warning btn-sm me-2"><i
+                                        <a href="/team/{{ $team->id }}/edit" class="btn btn-warning btn-sm me-2"><i
                                                 class="bi bi-pencil-square"></i></a>
                                         <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal"
-                                            data-bs-target="#HapusDivisi{{ $divisi->id }}"><i
+                                            data-bs-target="#Hapusteam{{ $team->id }}"><i
                                                 class="bi bi-trash"></i></button>
                                     </td>
                                 </tr>
-																<div class="modal fade" id="HapusDivisi{{ $divisi->id }}" tabindex="-1"
-                                    aria-labelledby="HapusDivisi" aria-hidden="true">
+																<div class="modal fade" id="Hapusteam{{ $team->id }}" tabindex="-1"
+                                    aria-labelledby="Hapusteam" aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h4 class="modal-title">Hapus Divisi</h4>
+                                                <h4 class="modal-title">Hapus team</h4>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                     aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
-                                                <h5 class="text-center">Apakah anda yakin menghapus Divisi
-                                                    <span>{{ $divisi->divisi }}</span>
+                                                <h5 class="text-center">Apakah anda yakin menghapus Team
+                                                    <span>{{ $team->team }}</span>
                                                 </h5>
                                                 <span class="d-flex justify-content-center"><i
                                                         class="bi bi-exclamation-circle"
                                                         style="font-size: 100px"></i></span>
-                                                <!--FORM HAPUS DIVISI-->
-                                                <form action="/divisi/{{ $divisi->id }}" method="post">
+                                                <!--FORM HAPUS TEAM-->
+                                                <form action="/team/{{ $team->id }}" method="post">
                                                     @method('delete')
                                                     @csrf
                                                     <div class="modal-footer justify-content-center">
@@ -78,7 +78,7 @@
                                                             data-bs-dismiss="modal" aria-label="Close">Batal</button>
                                                     </div>
                                                 </form>
-                                                <!--END HAPUS DIVISI-->
+                                                <!--END HAPUS TEAM-->
                                             </div>
                                         </div>
                                     </div>

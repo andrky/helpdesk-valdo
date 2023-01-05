@@ -48,7 +48,7 @@
                                 <tr>
                                     <td class="text-center align-middle">{{ $loop->iteration }}</td>
                                     <td class="text-center align-middle">{{ $karyawan->divisi->divisi }}</td>
-                                    <td class="text-center align-middle">{{ $karyawan->divisi->team }}</td>
+                                    <td class="text-center align-middle">{{ $karyawan->team->team }}</td>
                                     <td class="text-center align-middle">{{ $karyawan->karyawan }}</td>
                                     <td class="text-center align-middle">{{ $karyawan->jabatan }}</td>
                                     <td class="text-center align-middle">

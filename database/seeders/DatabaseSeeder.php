@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Team;
 use App\Models\User;
 use App\Models\Divisi;
 use App\Models\Karyawan;
@@ -20,6 +21,8 @@ class DatabaseSeeder extends Seeder
         User::factory(20)->create();
 
         Divisi::factory(4)->create();
+
+				Team::factory(4)->create();
 
         Karyawan::factory(20)->create();
 

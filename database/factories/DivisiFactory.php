@@ -14,8 +14,7 @@ class DivisiFactory extends Factory
     public function definition()
     {
         return [
-            'divisi' => $this->faker->words(1,true),
-            'team' => $this->faker->words(1,true),
+            'divisi' => $this->faker->words(1,true)
         ];
     }
 }

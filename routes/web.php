@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TeamController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DivisiController;
@@ -43,6 +44,7 @@ Route::get('/pengaduan', function() {
 })->middleware('auth');
 
 Route::resource('/divisi', DivisiController::class)->middleware('auth');
+Route::resource('/team', TeamController::class)->middleware('auth');
 Route::resource('/kategori', KategoriController::class)->middleware('auth');
 Route::resource('/karyawan', KaryawanController::class)->middleware('auth');
 Route::resource('/user', UserController::class)->middleware('auth');
