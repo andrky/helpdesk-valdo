@@ -14,7 +14,8 @@ class TeamFactory extends Factory
     public function definition()
     {
         return [
-            'team' => $this->faker->words(1,true)
+            'team' => $this->faker->words(1,true),
+						'divisi_id' => mt_rand(1,4),
         ];
     }
 }

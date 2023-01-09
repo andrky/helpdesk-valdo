@@ -15,6 +15,7 @@ class CreateTeamsTable extends Migration
     {
         Schema::create('teams', function (Blueprint $table) {
             $table->id();
+						$table->foreignId('divisi_id');
 						$table->string('team');
             $table->timestamps();
         });

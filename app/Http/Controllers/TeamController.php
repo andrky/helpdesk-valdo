@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Team;
+use App\Models\Divisi;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -29,7 +30,8 @@ class TeamController extends Controller
     public function create()
     {
         return view('team.teamtambah', [
-					'title' => "Tambah Team"
+					'title' => "Tambah Team",
+					'divisis' => Divisi::all()
 				]);
     }
 
@@ -42,7 +44,8 @@ class TeamController extends Controller
     public function store(Request $request)
     {
         $validateData = $request->validate([
-					'team' => 'required|unique:teams|max:255'
+					'team' => 'required|unique:teams|max:255',
+					'divisi_id' => 'required'
 				]);
 
 				Team::create($validateData);
@@ -70,8 +73,9 @@ class TeamController extends Controller
     public function edit(Team $team)
     {
         return view('team.teamedit', [
-					'title' => "Edit team",
-					'teams' => $team
+					'title' => "Edit Team",
+					'teams' => $team,
+					'divisis' => Divisi::all(),
 				]);
     }
 
@@ -85,6 +89,7 @@ class TeamController extends Controller
     public function update(Request $request, Team $team)
     {
         $rules = [
+					'divisi_id' => 'required'
 				];
 
 				if($request->team != $team->team) {

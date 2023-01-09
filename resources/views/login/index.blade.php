@@ -19,7 +19,12 @@
                 <div class="container">
                     <div class="row justify-content-center my-5">
                         <div class="col-lg-5">
-                            @if (session()->has('success'))
+														<div class="row justify-content-center">
+															<div class="col-6 col-md-6 col-sm-6">
+																<img src="/img/logo.png" class="img-fluid rounded mx-auto d-block" alt="Logo Valdo">
+															</div>
+														</div>
+														@if (session()->has('success'))
                                 <div class="alert alert-success alert-dismissible fade show my-4" role="alert">
                                     {{ session('success') }}
                                     <button type="button" class="btn-close" data-bs-dismiss="alert"
@@ -33,7 +38,7 @@
                                         aria-label="Close"></button>
                                 </div>
                             @endif
-                            <div class="card shadow-lg border-0 rounded-lg">
+                            <div class="card shadow-lg border-0 rounded-lg mt-4">
                                 <div class="card-header">
                                     <h3 class="text-center font-weight-light my-4">Login</h3>
                                 </div>
@@ -81,13 +86,7 @@
         </div>
 				<hr class="dropdown-divider">
         <div id="layoutAuthentication_footer">
-            <footer class="py-4 bg-light mt-auto">
-                <div class="container-fluid px-4">
-                    <div class="d-flex align-items-center justify-content-between small">
-                        <div class="text-muted">Copyright &copy; Your Website 2022</div>
-                    </div>
-                </div>
-            </footer>
+					@include('footer.index')
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous">

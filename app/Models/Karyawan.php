@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Team;
+use App\Models\User;
 use App\Models\Divisi;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -19,5 +20,9 @@ class Karyawan extends Model
 
 		public function team() {
 			return $this->belongsTo(Team::class);
+		}
+
+		public function user() {
+			return $this->hasOne(User::class);
 		}
 }

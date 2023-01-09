@@ -22,7 +22,7 @@
                                     <div class="input-group">
                                         <select class="form-select" name="divisi_id">
                                             @foreach ($divisis as $divisi)
-                                                @if (old('divisi_id') == $divisi->divisi)
+                                                @if (old('divisi_id') == $divisi->id)
                                                     <option value="{{ $divisi->id }}" selected>
                                                         {{ $divisi->divisi }}
                                                     </option>
@@ -39,7 +39,7 @@
                                     <div class="input-group">
                                         <select class="form-select" name="team_id">
                                             @foreach ($teams as $team)
-                                                @if (old('team_id') == $team->team)
+                                                @if (old('team_id') == $team->id)
                                                     <option value="{{ $team->id }}" selected>
                                                         {{ $team->team }}
                                                     </option>

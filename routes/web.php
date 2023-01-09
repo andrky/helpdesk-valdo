@@ -7,6 +7,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DivisiController;
 use App\Http\Controllers\KaryawanController;
 use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\ChangePasswordController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +32,7 @@ Route::get('/', [LoginController::class, 'index'])->name('login')->middleware('g
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
 
+
 Route::get('/dashboard', function() {
 	return view('index',[
 		'title' => "Dashboard"
@@ -49,4 +51,11 @@ Route::resource('/kategori', KategoriController::class)->middleware('auth');
 Route::resource('/karyawan', KaryawanController::class)->middleware('auth');
 Route::resource('/user', UserController::class)->middleware('auth');
 
+// Route::get('/cp/{user:id}', function() {
+// 	return view('password.cp',[x
+// 		'title' => "Dashboard"
+// 	]);
+// })->middleware('auth');
 
+Route::get('/cp/{user:id}', [ChangePasswordController::class, 'index']);
+Route::post('/cp/{user:id}', [ChangePasswordController::class, 'update']);

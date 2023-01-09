@@ -33,6 +33,6 @@
         </div>
     </div>
     <div class="sb-sidenav-footer">
-        <div class="small">Welcome back, {{ auth()->user()->email }}</div>
+        <div class="small">Welcome back, {{ auth()->user()->karyawan->karyawan}}</div>
     </div>
 </nav>

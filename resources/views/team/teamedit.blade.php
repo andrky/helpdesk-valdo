@@ -26,6 +26,21 @@
                                     {{ $message }}
                                 </div>
                             @enderror
+														<div class="col">
+                                    <label for="Divisi" class="label-bold label-mt">Divisi</label>
+                                    <div class="input-group">
+                                        <select class="form-select" name="divisi_id">
+                                            @foreach ($divisis as $divisi)
+                                                @if (old('divisi_id', $teams->divisi_id) == $divisi->id)
+                                                    <option value="{{ $divisi->id }}" selected>{{ $divisi->divisi }}
+                                                    </option>
+                                                @else
+                                                    <option value="{{ $divisi->id }}">{{ $divisi->divisi }}</option>
+                                                @endif
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
                         </div>
                         <div class="modal-footer">
                             <button type="submit" class="btn btn-primary">Edit Data</button>

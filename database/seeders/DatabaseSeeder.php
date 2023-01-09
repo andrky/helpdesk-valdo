@@ -18,13 +18,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        User::factory(20)->create();
+        User::factory(3)->create();
 
         Divisi::factory(4)->create();
 
 				Team::factory(4)->create();
 
-        Karyawan::factory(20)->create();
+        Karyawan::factory(3)->create();
 
         Kategori::factory(3)->create();
     }
