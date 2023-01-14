@@ -22,7 +22,7 @@
                 </div>
                 {{-- View, Edit dan Divisi --}}
                 <div class="card-body">
-                    <table id="datatablesSimple">
+                    <table id="tabel-data" class="table table-striped table-bordered nowrap" style="width: 100%">
                         <thead>
                             <tr>
                                 <th class="text-center align-middle">No</th>
@@ -30,13 +30,6 @@
                                 <th class="text-center align-middle">Aksi</th>
                             </tr>
                         </thead>
-                        <tfoot>
-                            <tr>
-                                <th class="text-center align-middle">No</th>
-                                <th class="text-center align-middle">Divisi</th>
-                                <th class="text-center align-middle">Aksi</th>
-                            </tr>
-                        </tfoot>
                         <tbody>
                             @foreach ($divisis as $divisi)
                                 <tr>

@@ -12,8 +12,8 @@
                     <i class="fas fa-table me-1"></i>
                     DataTable Example
                 </div>
-                <div class="card-body">
-                    <table id="datatablesSimple">
+                <div class="card-body table-responsive">
+                    <table id="tabel-data" class="table table-striped table-bordered nowrap" style="width: 100%">
                         <thead>
                             <tr>
                                 <th>Name</th>

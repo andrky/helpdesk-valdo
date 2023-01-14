@@ -21,8 +21,8 @@
                     <a href="/team/create" class="btn btn-success"><i class="bi bi-plus-lg pe-2"></i>Tambah Data</a>
                 </div>
                 {{-- View, Edit dan Team --}}
-                <div class="card-body">
-                    <table id="datatablesSimple">
+                <div class="card-body table-responsive">
+                    <table id="tabel-data" class="table table-striped table-bordered nowrap" style="width: 100%">
                         <thead>
                             <tr>
                                 <th class="text-center align-middle">No</th>
@@ -31,14 +31,6 @@
                                 <th class="text-center align-middle">Aksi</th>
                             </tr>
                         </thead>
-                        <tfoot>
-                            <tr>
-                                <th class="text-center align-middle">No</th>
-                                <th class="text-center align-middle">Team</th>
-                                <th class="text-center align-middle">Divisi</th>
-                                <th class="text-center align-middle">Aksi</th>
-                            </tr>
-                        </tfoot>
                         <tbody>
                             @foreach ($teams as $team)
                                 <tr>

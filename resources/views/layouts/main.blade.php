@@ -13,9 +13,12 @@
     {{-- CDN Bootstrap CSS --}}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+		{{-- CDN Bootstrap CSS Datatable --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap5.min.css">
+    {{-- <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" /> --}}
     {{-- Local CSS --}}
-    <link href="/template/css/my.css" rel="stylesheet" />
+    {{-- <link href="/template/css/my.css" rel="stylesheet"> --}}
     <link href="/template/css/styles.css" rel="stylesheet" />
 </head>
 
@@ -27,6 +30,7 @@
         </div>
         <div id="layoutSidenav_content">
             @yield('content')
+
         </div>
     </div>
 
@@ -34,13 +38,22 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
-    {{-- local JS --}}
+    {{-- CDN Jquery & JS Datatable --}}
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js"></script>
+		{{-- local JS --}}
     <script src="/template/js/scripts.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#tabel-data').DataTable();
+        });
+    </script>
     {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
     <script src="/template/assets/demo/chart-area-demo.js"></script>
     <script src="/template/assets/demo/chart-bar-demo.js"></script> --}}
-    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
-    <script src="/template/js/datatables-simple-demo.js"></script>
+    {{-- <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script> --}}
+    {{-- <script src="/template/js/datatables-simple-demo.js"></script> --}}
     {{-- @error('kategori')
         <script>
             var myModal = new bootstrap.Modal(document.getElementById('TambahKategori'));

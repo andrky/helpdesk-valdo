@@ -12,8 +12,8 @@
                     <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalTambahPengaduan"><i
                             class="bi bi-plus-lg pe-2"></i>Tambah Data</button>
                 </div>
-                <div class="card-body">
-                    <table id="datatablesSimple">
+                <div class="card-body table-responsive">
+                    <table id="tabel-data" class="table table-striped table-bordered nowrap" style="width: 100%">
                         <thead>
                             <tr>
                                 <th class="text-center align-middle">No</th>
@@ -29,21 +29,6 @@
                                 <th class="text-center align-middle">Aksi</th>
                             </tr>
                         </thead>
-                        <tfoot>
-                            <tr>
-                                <th class="text-center align-middle">No</th>
-                                <th class="text-center align-middle">Pelapor</th>
-                                <th class="text-center align-middle">Kategori</th>
-                                <th class="text-center align-middle">Keterangan</th>
-                                <th class="text-center align-middle">Tanggal Pengaduan</th>
-                                <th class="text-center align-middle">Teknisi</th>
-                                <th class="text-center align-middle">Tanggal Proses</th>
-                                <th class="text-center align-middle">Tanggal Selesai</th>
-                                <th class="text-center align-middle">Troubleshooting</th>
-                                <th class="text-center align-middle">Status</th>
-                                <th class="text-center align-middle">Aksi</th>
-                            </tr>
-                        </tfoot>
                         <tbody>
                             <tr>
                                 <td class="text-center align-middle">Nama Karyawan</td>
@@ -62,7 +47,7 @@
                                     {{-- <button type="button" class="btn btn-success btn-sm mb-2" style="font-size:10px">Close</button></button> --}}
                                 </td>
                                 <td class="text-center">
-                                    <button type="button" class="btn btn-warning btn-sm mb-2"><i
+                                    <button type="button" class="btn btn-warning btn-sm me-2"><i
                                             class="bi bi-pencil-square"></i></button>
                                     <button type="button" class="btn btn-danger btn-sm"><i
                                             class="bi bi-trash"></i></button>

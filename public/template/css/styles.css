@@ -12239,3 +12239,27 @@ body {
     font-size: 0.75rem;
     border-radius: 0.25rem !important;
 }
+
+.form-group{
+	margin-bottom: 15px;
+}
+
+.form-control{
+	margin-top: 5px;
+}
+
+.input-group{
+	margin-top: 5px;
+}
+
+.label-bold{
+	font-weight: bold;
+}
+
+.label-mt{
+	margin-top: 20px;
+}
+
+#dashboard_datatable > thead > tr > th {
+	text-align: center;
+}
