@@ -9,8 +9,7 @@
             </ol>
             <div class="card mb-4">
                 <div class="card-header">
-                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalTambahPengaduan"><i
-                            class="bi bi-plus-lg pe-2"></i>Tambah Data</button>
+                    <a href="/pengaduan/create" class="btn btn-success"><i class="bi bi-plus-lg pe-2"></i>Tambah Data</a>
                 </div>
                 <div class="card-body table-responsive">
                     <table id="tabel-data" class="table table-striped table-bordered nowrap" style="width: 100%">
@@ -18,8 +17,10 @@
                             <tr>
                                 <th class="text-center align-middle">No</th>
                                 <th class="text-center align-middle">Pelapor</th>
+                                <th class="text-center align-middle">Divisi</th>
+                                <th class="text-center align-middle">Team</th>
                                 <th class="text-center align-middle">Kategori</th>
-                                <th class="text-center align-middle">Keterangan</th>
+                                <th class="text-center align-middle">Masalah</th>
                                 <th class="text-center align-middle">Tanggal Pengaduan</th>
                                 <th class="text-center align-middle">Teknisi</th>
                                 <th class="text-center align-middle">Tanggal Proses</th>
@@ -30,32 +31,36 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td class="text-center align-middle">Nama Karyawan</td>
-                                <td class="text-center align-middle">System Architect</td>
-                                <td class="text-center align-middle">System Architect</td>
-                                <td class="text-center align-middle">System Architect</td>
-                                <td class="text-center align-middle">System Architect</td>
-                                <td class="text-center align-middle">System Architect</td>
-                                <td class="text-center align-middle">System Architect</td>
-                                <td class="text-center align-middle">System Architect</td>
-                                <td class="text-center align-middle">System Architect</td>
-                                <td class="text-center align-middle">
-                                    <div class="bg-primary rounded-3 py-1 text-white" style="font-size: 10px">
-                                        Open
-                                    </div>
-                                    {{-- <button type="button" class="btn btn-success btn-sm mb-2" style="font-size:10px">Close</button></button> --}}
-                                </td>
-                                <td class="text-center">
-                                    <button type="button" class="btn btn-warning btn-sm me-2"><i
-                                            class="bi bi-pencil-square"></i></button>
-                                    <button type="button" class="btn btn-danger btn-sm"><i
-                                            class="bi bi-trash"></i></button>
-                                    {{-- <a href="#" class="badge bg-warning fs-6 me-2"><i
+                            @foreach ($pengaduans as $pengaduan)
+                                <tr>
+                                    <td class="text-center align-middle">{{ $loop->iteration }}</td>
+                                    <td class="text-center align-middle">{{ $pengaduan->karyawan->karyawan }}</td>
+                                    <td class="text-center align-middle">{{ $pengaduan->divisi->divisi }}</td>
+                                    <td class="text-center align-middle">{{ $pengaduan->team->team }}</td>
+                                    <td class="text-center align-middle">{{ $pengaduan->kategori->kategori }}</td>
+                                    <td class="text-center align-middle">{{ $pengaduan->masalah }}</td>
+                                    <td class="text-center align-middle">{{ $pengaduan->created_at }}</td>
+                                    <td class="text-center align-middle">{{ $pengaduan->teknisi }}</td>
+                                    <td class="text-center align-middle"></td>
+                                    <td class="text-center align-middle"></td>
+                                    <td class="text-center align-middle">{{ $pengaduan->penyelesaian }}</td>
+                                    <td class="text-center align-middle">
+                                        <div class="bg-primary rounded-3 py-1 text-white" style="font-size: 10px">
+                                            {{ $pengaduan->status }}
+                                        </div>
+                                        {{-- <button type="button" class="btn btn-success btn-sm mb-2" style="font-size:10px">Close</button></button> --}}
+                                    </td>
+                                    <td class="text-center">
+                                        <button type="button" class="btn btn-warning btn-sm me-2"><i
+                                                class="bi bi-pencil-square"></i></button>
+                                        <button type="button" class="btn btn-danger btn-sm"><i
+                                                class="bi bi-trash"></i></button>
+                                        {{-- <a href="#" class="badge bg-warning fs-6 me-2"><i
                                             class="bi bi-pencil-square"></i></a>
                                     <a href="#" class="badge bg-danger fs-6"><i class="bi bi-trash"></i></a> --}}
-                                </td>
-                            </tr>
+                                    </td>
+                                </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
@@ -96,8 +101,8 @@
                                             <div class="form-group">
                                                 <label for="" class="label-bold">Team</label>
                                                 <input type="text" class="form-control" id="addNamaBarang"
-                                                    name="addNamaBarang" aria-describedby="emailHelp"
-                                                    placeholder="Nama..." disabled>
+                                                    name="addNamaBarang" aria-describedby="emailHelp" placeholder="Nama..."
+                                                    disabled>
                                             </div>
                                         </div>
                                         <div class="col-md-6">

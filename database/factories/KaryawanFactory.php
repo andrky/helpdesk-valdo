@@ -15,7 +15,7 @@ class KaryawanFactory extends Factory
     {
         return [
             'divisi_id' => mt_rand(1,3),
-						'team_id' => mt_rand(1,6),
+						'team_id' => mt_rand(1,3),
             'karyawan' => $this->faker->name(),
             'jabatan' => $this->faker->words(1,true),
         ];

@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\Divisi;
 use App\Models\Karyawan;
 use App\Models\Kategori;
+use App\Models\Pengaduan;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -20,12 +21,14 @@ class DatabaseSeeder extends Seeder
     {
         User::factory(3)->create();
 
-        Divisi::factory(4)->create();
+        Divisi::factory(3)->create();
 
-				Team::factory(4)->create();
+				Team::factory(3)->create();
 
         Karyawan::factory(3)->create();
 
         Kategori::factory(3)->create();
+
+				Pengaduan::factory(2)->create();
     }
 }

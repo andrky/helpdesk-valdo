@@ -7,6 +7,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DivisiController;
 use App\Http\Controllers\KaryawanController;
 use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\PengaduanController;
 use App\Http\Controllers\ChangePasswordController;
 
 /*
@@ -39,13 +40,8 @@ Route::get('/dashboard', function() {
 	]);
 })->middleware('auth');
 
-Route::get('/pengaduan', function() {
-	return view('pengaduan',[
-		'title' => "Pengaduan"
-	]);
-})->middleware('auth');
-
 Route::resource('/divisi', DivisiController::class)->middleware('auth');
+Route::resource('/pengaduan', PengaduanController::class)->middleware('auth');
 Route::resource('/team', TeamController::class)->middleware('auth');
 Route::resource('/kategori', KategoriController::class)->middleware('auth');
 Route::resource('/karyawan', KaryawanController::class)->middleware('auth');
@@ -57,5 +53,5 @@ Route::resource('/user', UserController::class)->middleware('auth');
 // 	]);
 // })->middleware('auth');
 
-Route::get('/cp/{user:id}', [ChangePasswordController::class, 'index']);
+Route::get('/cp/{user:id}', [ChangePasswordController::class, 'index'])->middleware('auth');
 Route::post('/cp/{user:id}', [ChangePasswordController::class, 'update']);

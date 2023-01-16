@@ -15,7 +15,7 @@ class TeamFactory extends Factory
     {
         return [
             'team' => $this->faker->words(1,true),
-						'divisi_id' => mt_rand(1,4),
+						'divisi_id' => mt_rand(1,3),
         ];
     }
 }
