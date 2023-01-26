@@ -18,10 +18,12 @@ class PengaduanFactory extends Factory
 						'karyawan_id' => mt_rand(1,3),
 						'kategori_id' => mt_rand(1,3),
 						'team_id' => mt_rand(1,3),
+						'user_id' => mt_rand(1,3),
             'masalah' => $this->faker->words(1,true),
-            'teknisi' => $this->faker->words(1,true),
             'penyelesaian' => $this->faker->words(1,true),
             'status' => $this->faker->words(1,true),
+            'tgl_proses' => $this->faker->words(1,true),
+            'tgl_selesai' => $this->faker->words(1,true),
         ];
     }
 }

@@ -2,6 +2,7 @@
     <div class="sb-sidenav-menu">
         <div class="nav">
             <div class="sb-sidenav-menu-heading">Menu</div>
+						@can('admin')
             <a class="nav-link {{ Request::is('dashboard') ? 'active' : ''}}" href="/dashboard">
                 <div class="sb-nav-link-icon"><i class="bi bi-house fs-6"></i></div>
                 Dashboard
@@ -30,6 +31,29 @@
                 <div class="sb-nav-link-icon"><i class="bi bi-person fs-6"></i></div>
                 User
             </a>
+            <a class="nav-link {{ Request::is('laporan*') ? 'active' : ''}}" href="/laporan">
+                <div class="sb-nav-link-icon"><i class="bi bi-book"></i></div>
+                Laporan
+            </a>
+						@elsecan('teknisi')
+						<a class="nav-link {{ Request::is('dashboard') ? 'active' : ''}}" href="/dashboard">
+                <div class="sb-nav-link-icon"><i class="bi bi-house fs-6"></i></div>
+                Dashboard
+            </a>
+            <a class="nav-link {{ Request::is('pengaduan') ? 'active' : ''}}" href="/pengaduan">
+                <div class="sb-nav-link-icon"><i class="bi bi-ticket-detailed fs-6"></i></div>
+                Pengaduan
+            </a>
+						@elsecan('user')
+						<a class="nav-link {{ Request::is('dashboard') ? 'active' : ''}}" href="/dashboard">
+                <div class="sb-nav-link-icon"><i class="bi bi-house fs-6"></i></div>
+                Dashboard
+            </a>
+            <a class="nav-link {{ Request::is('pengaduan') ? 'active' : ''}}" href="/pengaduan">
+                <div class="sb-nav-link-icon"><i class="bi bi-ticket-detailed fs-6"></i></div>
+                Pengaduan
+            </a>
+						@endcan
         </div>
     </div>
     

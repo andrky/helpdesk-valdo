@@ -19,10 +19,12 @@ class CreatePengaduansTable extends Migration
 						$table->foreignId('divisi_id');
 						$table->foreignId('team_id');
 						$table->foreignId('kategori_id');
+						$table->foreignId('user_id');
 						$table->string('masalah');
-						$table->string('teknisi');
 						$table->string('penyelesaian');
 						$table->string('status');
+						$table->string('tgl_proses');
+						$table->string('tgl_selesai');
             $table->timestamps();
         });
     }

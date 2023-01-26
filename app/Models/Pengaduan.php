@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Team;
+use App\Models\User;
 use App\Models\Divisi;
 use App\Models\Karyawan;
 use App\Models\Kategori;
@@ -30,4 +31,9 @@ class Pengaduan extends Model
 		public function team() {
 			return $this->belongsTo(Team::class);
     }
+
+		public function user() {
+			return $this->belongsTo(User::class);
+    }
+		
 }

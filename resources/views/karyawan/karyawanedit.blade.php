@@ -61,7 +61,7 @@
                             <label for="Karyawan" class="label-bold label-mt">Jabatan</label>
                             <input type="text" class="form-control  @error('team') is-invalid @enderror " id="jabatan"
                                 name="jabatan" aria-describedby="emailHelp" placeholder="Team..." required autofocus
-                                value="{{ old('karyawan', $karyawans->jabatan) }}">
+                                value="{{ old('jabatan', $karyawans->jabatan) }}">
                             @error('jabatan')
                                 <div class="invalid-feedback">
                                     {{ $message }}
