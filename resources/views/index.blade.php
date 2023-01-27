@@ -4,6 +4,12 @@
 		@can('admin')
     <main>
         <div class="container-fluid px-4 pt-5">
+					@if (session()->has('success'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    {{ session('success') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
             <div class="row">
                 <div class="col-xl-4 col-md-6">
                     <div class="card bg-primary text-white mb-4">
@@ -38,6 +44,12 @@
 		@elsecan('teknisi')
 		<main>
         <div class="container-fluid px-4 pt-5">
+					@if (session()->has('success'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    {{ session('success') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
             <div class="row">
                 <div class="col-xl-4 col-md-6">
                     <div class="card bg-primary text-white mb-4">
@@ -72,6 +84,12 @@
 		@elsecan('user')
 		<main>
         <div class="container-fluid px-4 pt-5">
+					@if (session()->has('success'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    {{ session('success') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
             <div class="row">
                 <div class="col-xl-4 col-md-6">
                     <div class="card bg-primary text-white mb-4">

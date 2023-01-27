@@ -48,7 +48,7 @@
                                         <div class="form-floating mb-3">
                                             <input class="form-control @error('email') is-invalid @enderror"
                                                 name="email" id="email" type="email"
-                                                placeholder="name@example.com" />
+                                                placeholder="name@example.com" required/>
                                             <label for="inputEmail">Email address</label>
                                             @error('email')
                                                 <div class="invalid-feedback">
@@ -58,7 +58,7 @@
                                         </div>
                                         <div class="form-floating mb-3">
                                             <input class="form-control" name="password" id="password" type="password"
-                                                placeholder="Password" />
+                                                placeholder="Password" required/>
                                             <label for="inputPassword">Password</label>
                                         </div>
                                         {{-- <div class="form-check mb-3">

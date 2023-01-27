@@ -40,8 +40,8 @@
                                     <td class="text-center align-middle">{{ $user->level }}</td>
                                     <td class="text-center align-middle">{{ $user->email }}</td>
                                     <td class="text-center align-middle">
-                                        <a href="/cp/{{ $user->id }}" class="btn btn-info btn-sm me-2"><i
-                                                class="bi bi-shield-lock"></i></a>
+                                        {{-- <a href="/cp/{{ $user->id }}" class="btn btn-info btn-sm me-2"><i
+                                                class="bi bi-shield-lock"></i></a> --}}
                                         <a href="/user/{{ $user->id }}/edit" class="btn btn-warning btn-sm me-2"><i
                                                 class="bi bi-pencil-square"></i></a>
                                         <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal"

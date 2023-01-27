@@ -30,7 +30,7 @@ class ChangePasswordController extends Controller
 					Auth()->user()->update([
 						'password' => Hash::make($request['password'])
 					]);
-					return redirect('/user')->with('success', 'Data berhasil diedit!');
+					return redirect('/dashboard')->with('success', 'Password berhasil diganti!');
 			}
 		}
 }
