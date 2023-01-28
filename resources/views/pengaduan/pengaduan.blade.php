@@ -854,12 +854,12 @@
                                                             <div class="modal-footer justify-content-end">
                                                                 @if ($pengaduan->penyelesaian != '-')
                                                                     <button type="submit"
-                                                                        class="btn btn-primary d-flex justify-content-center ">Konfirmasi
-                                                                        Penyelesaian</button>
+                                                                        class="btn btn-primary d-flex justify-content-center ">Selesaikan Pengaduan
+                                                                        </button>
                                                                 @else
                                                                     <button type="submit"
-                                                                        class="btn btn-primary d-flex justify-content-center disabled">Konfirmasi
-                                                                        Penyelesaian</button>
+                                                                        class="btn btn-primary d-flex justify-content-center disabled">Selesaikan Pengaduan
+                                                                        </button>
                                                                 @endif
                                                             </div>
                                                             {{-- </div>

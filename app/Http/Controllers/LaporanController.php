@@ -22,15 +22,15 @@ class LaporanController extends Controller
         $end_date = Carbon::parse(request()->end_date)->toDateTimeString();
         $pengaduans = Pengaduan::whereBetween('created_at',[$start_date,$end_date])->get();
 				$title = 'Laporan';
-    } else {
-        $pengaduans =  Pengaduan::all();
-				$title = 'Laporan';
-    }
-        return view('laporan.laporan', [
-					'title' => $title,
-					'pengaduans' => $pengaduans
-				]);
-    }
+				} else {
+						$pengaduans =  Pengaduan::all();
+						$title = 'Laporan';
+				}
+						return view('laporan.laporan', [
+							'title' => $title,
+							'pengaduans' => $pengaduans
+						]);
+				}
 
     /**
      * Show the form for creating a new resource.
@@ -99,9 +99,10 @@ class LaporanController extends Controller
     }
 
 		public function export(){
+				$todayDate = Carbon::now()->format('d-m-Y');
         //mengambil data dan tampilan dari halaman laporan_pdf
         //data di bawah ini bisa kalian ganti nantinya dengan data dari database
-        $data = PDF::loadview('laporan.laporan_pdf', ['pengaduans' => Pengaduan::all(), 'title' => 'Laporan'])->setPaper('a4', 'landscape');;
+        $data = PDF::loadview('laporan.laporan_pdf', ['pengaduans' => Pengaduan::all(), 'title' => 'Laporan', 'tanggal' => $todayDate])->setPaper('a4', 'landscape');;
         //mendownload laporan.pdf
 				return $data->download('laporan.pdf');
     }
