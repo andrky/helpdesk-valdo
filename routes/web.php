@@ -13,6 +13,8 @@ use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PengaduanController;
 use App\Http\Controllers\ChangePasswordController;
+use App\Http\Controllers\KnowledgeManagementController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -44,6 +46,7 @@ Route::resource('/kategori', KategoriController::class)->except('show')->middlew
 Route::resource('/karyawan', KaryawanController::class)->except('show')->middleware('auth');
 Route::resource('/user', UserController::class)->except('show')->middleware('auth');
 Route::resource('/laporan', LaporanController::class)->except('show')->middleware('auth');
+Route::resource('/km', KnowledgeManagementController::class)->except('show')->middleware('auth');
 Route::get('/cp/{user:id}', [ChangePasswordController::class, 'index'])->middleware('auth');
 Route::post('/cp/{user:id}', [ChangePasswordController::class, 'update']);
 Route::get('/exportlaporan', [LaporanController::class, 'export'])->middleware('auth');

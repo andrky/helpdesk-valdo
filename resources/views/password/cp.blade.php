@@ -22,7 +22,7 @@
 
                             <div class="card shadow-lg border-0 rounded-lg mt-4">
                                 <div class="card-header">
-                                    <a href="/user" class="btn-close" type="button"></a>
+                                    <a href="/dashboard" class="btn-close" type="button"></a>
                                     <h3 class="text-center font-weight-light my-4">Ganti Password</h3>
                                 </div>
                                 <div class="card-body py-5">

@@ -35,6 +35,10 @@
                 <div class="sb-nav-link-icon"><i class="bi bi-book"></i></div>
                 Laporan
             </a>
+						<a class="nav-link {{ Request::is('km*') ? 'active' : ''}}" href="/km">
+                <div class="sb-nav-link-icon"><i class="bi bi-ticket-detailed fs-6"></i></div>
+                Knowledge Management
+            </a>
 						@elsecan('teknisi')
 						<a class="nav-link {{ Request::is('dashboard') ? 'active' : ''}}" href="/dashboard">
                 <div class="sb-nav-link-icon"><i class="bi bi-house fs-6"></i></div>
